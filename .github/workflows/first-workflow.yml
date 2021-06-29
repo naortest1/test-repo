@@ -2,10 +2,8 @@ name: log and process issue comments
 on: [push]
 
 jobs:
-  issue_comment:
-    name: log issue comment
-    runs-on: self-hosted
-    steps:
-      - name: Create issue using REST API
-        run: |
-          echo hi
+  build:
+    - name: Test
+      uses: dummy-guy-organization/hello-world-typescript-action@2
+      with:
+        who-to-greet: Naor
