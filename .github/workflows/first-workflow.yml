@@ -15,5 +15,5 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            du -hs ./_actions
+            du -hs _actions
           result-encoding: string
