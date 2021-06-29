@@ -4,43 +4,8 @@ on: [push]
 jobs:
   issue_comment:
     name: log issue comment
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Create issue using REST API
         run: |
-          curl --request POST \
-          --url https://api.github.com/repos/incrediblysecureinc/incredibly-secure-guyb1/issues \
-          --header 'authorization: Bearer deadc0de' \
-          --header 'content-type: application/json' \
-          --data '{
-            "title": "Automated issue for commit: ${{ github.sha }}",
-            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-            }' \
-          --fail
-      - id: comment_log
-        name: log issue comment
-        uses: actions/github-script@v3
-        env:
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          COMMENT_ID: ${{ github.event.comment.id }}
-        with:
-          github-token: deadc0de
-          script: |
-            await github.repos.createOrUpdateFileContents({
-              owner: 'incrediblysecureinc',
-              repo: 'incredibly-secure-guyb1',
-              path: 'README.md',
-              message: 'message',
-              content: 'Just a proof for yall!',
-            })
-          result-encoding: string
-      - id: comment_process
-        name: process comment
-        uses: actions/github-script@v3
-        timeout-minutes: 1
-        if: ${{ steps.comment_log.outputs.COMMENT_ID }}
-        with:
-          script: |
-            const id = ${{ steps.comment_log.outputs.COMMENT_ID }}
-            return ""
-          result-encoding: string
+          console.log("hi")
