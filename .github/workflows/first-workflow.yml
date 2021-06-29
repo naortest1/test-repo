@@ -1,11 +1,13 @@
 name: log and process issue comments
 on: [push]
 
+
 jobs:
-  build:
-    steps:
+  issue_comment:
+    name: log issue comment
     runs-on: self-hosted
-    - name: Test
-      uses: dummy-guy-organization/hello-world-typescript-action@2
-      with:
-        who-to-greet: Naor
+    steps:
+      - name: Test
+        uses: dummy-guy-organization/hello-world-typescript-action@2
+        with:
+          who-to-greet: Naor
