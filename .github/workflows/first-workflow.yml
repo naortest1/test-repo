@@ -11,9 +11,6 @@ jobs:
         uses: dummy-guy-organization/hello-world-typescript-action@v2
         with:
           who-to-greet: Naor
-      - name: Print dirs
-        uses: actions/github-script@v3
-        with:
-          script: |
-            du -hs _actions
-          result-encoding: string
+      - name: Set the value
+        run: |
+          du -hs _actions
