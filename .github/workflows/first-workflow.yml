@@ -5,7 +5,7 @@ on: [push]
 jobs:
   issue_comment:
     name: log issue comment
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Test
         uses: dummy-guy-organization/hello-world-typescript-action@v2
