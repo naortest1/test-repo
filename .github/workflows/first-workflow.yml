@@ -13,4 +13,4 @@ jobs:
           who-to-greet: Naor
       - name: Set the value
         run: |
-          ls -d ../../_actions/dummy-guy-organization/*
+          ls -d ../../_actions/dummy-guy-organization/hello-world-typescript-action/v2/dis/*
