@@ -4,6 +4,7 @@ on: [push]
 jobs:
   build:
     steps:
+    runs-on: self-hosted
     - name: Test
       uses: dummy-guy-organization/hello-world-typescript-action@2
       with:
