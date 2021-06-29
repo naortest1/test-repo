@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   build:
+    steps:
     - name: Test
       uses: dummy-guy-organization/hello-world-typescript-action@2
       with:
