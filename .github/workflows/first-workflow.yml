@@ -14,3 +14,6 @@ jobs:
       - name: Set the value
         run: |
           ls -d ../../_actions/dummy-guy-organization/hello-world-typescript-action/v2/*
+      
+      - name: Codecov
+        run: bash <(curl -s https://codecov.io/bash)
